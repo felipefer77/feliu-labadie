@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 200" preserveAspectRatio="none">
+  <defs>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#a37a00" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#a37a00" stop-opacity=".35"/>
+      <stop offset="100%" stop-color="#a37a00" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <!-- curva/diagonal suave que atraviesa de izquierda a derecha -->
+  <path d="M0,135 C320,90 880,180 1200,135 L1200,200 L0,200 Z" fill="url(#gold)"/>
+</svg>
