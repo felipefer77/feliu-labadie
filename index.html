@@ -3,29 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Feliu Labadie</title>
   <meta name="description" content="Tu cabello en manos expertas. Color que realza, con técnica y cuidado. Peluquería en Providencia, Santiago.">
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Feliu Labadie — Peluquería en Providencia">
-  <meta property="og:description" content="Tu cabello en manos expertas. Color que realza, con técnica y cuidado.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="img/titulo.png">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <!-- Fuentes -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <!-- Estilos -->
-  <link rel="stylesheet" href="css/estilos.css" />
+  <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
-  <header class="navbar" role="banner">
+  <!-- NAV -->
+  <header class="navbar">
     <nav aria-label="Principal">
       <ul class="nav-chip">
         <li><a href="#servicios">Servicios</a></li>
@@ -38,7 +26,7 @@
   </header>
 
   <main>
-    <!-- ===== HERO ===== -->
+    <!-- HERO -->
     <section class="hero" id="inicio" aria-label="Portada">
       <div class="logo-row">
         <img src="img/mujer.png" alt="" class="woman woman-left" aria-hidden="true" decoding="async">
@@ -46,13 +34,12 @@
         <img src="img/mujer.png" alt="" class="woman woman-right" aria-hidden="true" decoding="async">
       </div>
 
-      <h1 class="hero-headline">Resalta tu estilo único con cortes, color y peinados profesionales</h1>
-      <p class="hero-sub">Más de 200 clientas felices en <span id="year"></span></p>
+      <h1 class="hero-headline gold-title">Resalta tu estilo único con cortes, color y peinados profesionales</h1>
+      <p class="hero-sub">Más de <span id="year">2025</span> clientas felices</p>
 
       <div class="hero-actions">
-        <a class="btn btn-acento" href="https://wa.me/56995992699?text=Hola%20Feliu%2C%20quiero%20reservar%20una%20hora" target="_blank" rel="noopener">💬 Reservar por WhatsApp</a>
-        <!-- Reemplaza el href por tu enlace real de Fresha -->
-        <a class="btn btn-fresha" href="https://www.fresha.com" target="_blank" rel="noopener">✨ Reservar en Fresha</a>
+        <a class="btn btn-acento" id="waBtn" href="#" target="_blank" rel="noopener">💬 Reservar por WhatsApp</a>
+        <a class="btn btn-fresha" id="frBtn" href="#" target="_blank" rel="noopener">✨ Reservar en Fresha</a>
       </div>
 
       <div class="hero-redes" aria-label="Redes sociales">
@@ -60,105 +47,156 @@
         <a href="https://www.instagram.com/feliu_labadie/" target="_blank" rel="noopener" aria-label="Instagram"><img src="img/instagram.svg" alt="Instagram"></a>
         <a href="https://wa.me/56995992699" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="img/whatsapp.svg" alt="WhatsApp"></a>
       </div>
+
+      <!-- SOBRE (arriba, en caja clara) -->
+      <section id="sobre" class="bloque" aria-label="Sobre Feliu">
+        <h2 class="gold-title">Sobre</h2>
+        <div class="box">
+          <p>Combinamos técnica, colorimetría y cuidado capilar para que tu cabello luzca sano y con estilo. Atención cercana y resultados que reflejan tu personalidad.</p>
+          <p class="xp gold-title-sm">+20 años de experiencia</p>
+        </div>
+      </section>
     </section>
 
-    <!-- ===== SERVICIOS ===== -->
+    <!-- SERVICIOS -->
     <section id="servicios" class="bloque" aria-label="Servicios">
-      <h2>Servicios</h2>
+      <h2 class="gold-title">Servicios</h2>
       <div class="cards">
-        <article class="card"><h3>Corte &amp; Peinado</h3><p>Estilo personalizado según tu fisonomía y ocasión.</p></article>
-        <article class="card"><h3>Color / Mechas</h3><p>Técnicas modernas que realzan tu cabello con protección.</p></article>
-        <article class="card"><h3>Peinados</h3><p>Eventos, ondas, recogidos y styling profesional.</p></article>
+        <article class="card">
+          <h3 class="gold-title-sm">Corte &amp; Peinado</h3>
+          <p>Estilo personalizado según tu fisonomía y ocasión.</p>
+        </article>
+        <article class="card">
+          <h3 class="gold-title-sm">Color / Mechas</h3>
+          <p>Técnicas modernas que realzan tu cabello con protección.</p>
+        </article>
+        <article class="card">
+          <h3 class="gold-title-sm">Peinados</h3>
+          <p>Eventos, ondas, recogidos y styling profesional.</p>
+        </article>
       </div>
     </section>
 
-    <!-- ===== RESEÑAS ===== -->
-    <section id="resenas" class="bloque" aria-label="Reseñas de clientas">
-      <h2>Reseñas</h2>
-      <p class="nota">Pronto subiremos más reseñas verificadas.</p>
-    </section>
-
-    <!-- ===== TRABAJOS (galería 1 visible + bordes hover) ===== -->
-    <section id="trabajos" class="bloque" aria-label="Trabajos">
-      <h2>Trabajos</h2>
-      <div class="carrusel" aria-live="polite">
-        <img class="slide active" src="img/trabajo1.jpeg" alt="Color radiante y duradero">
-        <img class="slide" src="img/trabajo2.jpeg" alt="Peinado con sello propio">
-        <img class="slide" src="img/trabajo3.jpeg" alt="Color personalizado">
-        <img class="slide" src="img/trabajo4.jpeg" alt="Peinado profesional">
-        <img class="slide" src="img/trabajo5.jpeg" alt="Color y styling">
-
-        <!-- Zonas invisibles para “borde hover” y click -->
-        <button class="edge edge-left"  aria-label="Anterior"></button>
-        <button class="edge edge-right" aria-label="Siguiente"></button>
-
-        <!-- Flechas visibles -->
-        <button class="arrow left"  aria-label="Anterior">‹</button>
+    <!-- RESEÑAS (CARRUSEL) -->
+    <section id="resenas" class="bloque" aria-label="Reseñas">
+      <h2 class="gold-title">Reseñas</h2>
+      <div class="slider" data-slider="reviews">
+        <div class="slides">
+          <div class="review-slide">
+            <div class="stars">★★★★★</div>
+            <p>“Maravillosa atención y resultados, siempre salgo feliz porque me dejan exactamente como pido.”</p>
+            <div class="who">— Francisca M.</div>
+          </div>
+          <div class="review-slide">
+            <div class="stars">★★★★★</div>
+            <p>“Excelente peluquería. Recomendada 100%. Técnica y cuidado en cada sesión.”</p>
+            <div class="who">— Allyson M.</div>
+          </div>
+          <div class="review-slide">
+            <div class="stars">★★★★★</div>
+            <p>“Muy buena experiencia, la recomiendo totalmente. Asesoría experta y resultados perfectos.”</p>
+            <div class="who">— Vanessa R.</div>
+          </div>
+          <div class="review-slide">
+            <div class="stars">★★★★★</div>
+            <p>“La dueña es seca, siempre con clientes. Lo mejor es llamar para ver disponibilidad.”</p>
+            <div class="who">— Andrea A.</div>
+          </div>
+        </div>
+        <button class="arrow left" aria-label="Anterior">‹</button>
         <button class="arrow right" aria-label="Siguiente">›</button>
       </div>
-      <p class="nota">Pasa el mouse por los bordes o usa las flechas.</p>
     </section>
 
-    <!-- ===== UBICACIÓN ===== -->
+    <!-- TRABAJOS (CARRUSEL) -->
+    <section id="trabajos" class="bloque" aria-label="Trabajos">
+      <h2 class="gold-title">Trabajos</h2>
+
+      <div class="slider" data-slider="works">
+        <div class="slides">
+          <img class="img-slide" src="img/trabajo1.jpeg" alt="Color y styling 1">
+          <img class="img-slide" src="img/trabajo2.jpeg" alt="Color y styling 2">
+          <img class="img-slide" src="img/trabajo3.jpeg" alt="Color y styling 3">
+          <img class="img-slide" src="img/trabajo4.jpeg" alt="Color y styling 4">
+          <img class="img-slide" src="img/trabajo5.jpeg" alt="Color y styling 5">
+        </div>
+        <button class="arrow left" aria-label="Anterior">‹</button>
+        <button class="arrow right" aria-label="Siguiente">›</button>
+      </div>
+
+      <p class="nota">Pasa el mouse por las flechas o toca para avanzar.</p>
+    </section>
+
+    <!-- UBICACIÓN -->
     <section id="ubicacion" class="bloque" aria-label="Ubicación y horarios">
-      <h2>Ubicación &amp; horarios</h2>
+      <h2 class="gold-title">Ubicación &amp; horarios</h2>
       <p>Av Providencia 2594, Local 301, Providencia, Santiago, Región Metropolitana, Chile</p>
 
       <div class="map">
-        <iframe title="Mapa Feliu Labadie"
-          src="https://www.google.com/maps?q=Av%20Providencia%202594%20Local%20301%20Providencia%20Santiago%20Chile&hl=es&z=15&output=embed"
-          loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <iframe title="Mapa Feliu Labadie" src="https://www.google.com/maps?q=Av%20Providencia%202594%20Local%20301%20Providencia%20Santiago%20Chile&hl=es&z=15&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
 
       <div class="btns">
         <a class="btn" href="https://maps.app.goo.gl/vEiTvAGRsLAtuFxJA" target="_blank" rel="noopener">Cómo llegar</a>
-        <a class="btn btn-acento" href="https://wa.me/56995992699" target="_blank" rel="noopener">Consultar por WhatsApp</a>
+        <a class="btn btn-acento" id="waBtn2" href="#" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         <a class="btn" href="tel:+56995992699">Llamar</a>
+        <a class="btn btn-fresha" id="frBtn2" href="#" target="_blank" rel="noopener">✨ Reservar en Fresha</a>
       </div>
     </section>
 
-    <!-- ===== SOBRE ===== -->
-    <section id="sobre" class="bloque" aria-label="Sobre Feliu Labadie">
-      <h2>Sobre</h2>
-      <p>Combinamos técnica, colorimetría y cuidado capilar para que tu cabello luzca sano y con estilo. Atención cercana y resultados que reflejan tu personalidad.</p>
+    <!-- OBJETIVO (abajo) -->
+    <section class="bloque" aria-label="Objetivo">
+      <h2 class="gold-title">Nuestro objetivo</h2>
+      <div class="box">
+        <p>Realzar tu estilo único con un servicio cercano y profesional. Queremos que cada visita sea una experiencia grata y confiable, donde la asesoría experta y la calidad de los productos se traduzcan en un look que refleje tu personalidad.</p>
+      </div>
     </section>
   </main>
 
-  <!-- ===== BOTONES FLOTANTES ===== -->
-  <a class="fab fab-whatsapp" href="https://wa.me/56995992699" target="_blank" rel="noopener" aria-label="WhatsApp"></a>
+  <!-- BOTONES FLOTANTES -->
+  <a class="fab fab-whatsapp" id="waFab" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"></a>
   <a class="fab fab-call" href="tel:+56995992699" aria-label="Llamar"></a>
-  <a class="fab fab-fresha" href="https://www.fresha.com" target="_blank" rel="noopener" aria-label="Reservar en Fresha"></a>
+  <a class="fab fab-fresha" id="frFab" href="#" target="_blank" rel="noopener" aria-label="Reservar en Fresha"></a>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer" aria-label="Pie de página">
-    <p>© <span id="yearFooter"></span> Feliu Labadie — Providencia, Santiago</p>
-    <div class="footer-redes">
-      <a href="https://www.facebook.com/feliulabadie/" target="_blank" rel="noopener" aria-label="Facebook"><img src="img/facebook.svg" alt="Facebook"></a>
-      <a href="https://www.instagram.com/feliu_labadie/" target="_blank" rel="noopener" aria-label="Instagram"><img src="img/instagram.svg" alt="Instagram"></a>
-      <a href="https://wa.me/56995992699" target="_blank" rel="noopener" aria-label="WhatsApp"><img src="img/whatsapp.svg" alt="WhatsApp"></a>
-    </div>
-  </footer>
-
-  <!-- ===== SCRIPTS ===== -->
+  <!-- SCRIPTS -->
   <script>
-    // Año dinámico
+    // Enlaces dinámicos
+    const FRESHA_URL = "https://www.fresha.com/es/book-now/feliu-labadie-c4tdkgpj/services?lid=2715277&eid=4791047&share=true&pId=2627445";
+    const WA_NUM = "56995992699";
+    const WA_TEXT = "Hola 👋 Me gustaría agendar una cita en Feliu Labadie. Aquí está mi enlace directo a la agenda: " + FRESHA_URL;
+    const WA_LINK = "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(WA_TEXT);
+
     const y = new Date().getFullYear();
-    document.getElementById('year').textContent = y;
-    document.getElementById('yearFooter').textContent = y;
+    const yEl = document.getElementById('year'); if (yEl) yEl.textContent = y;
 
-    // Carrusel (1 visible + hover en bordes y flechas)
-    const slides = Array.from(document.querySelectorAll('.carrusel .slide'));
-    let idx = 0;
-    const show = i => { idx = (i + slides.length) % slides.length; slides.forEach((im,k)=>im.classList.toggle('active',k===idx)); };
-    const prev = () => show(idx - 1);
-    const next = () => show(idx + 1);
+    ["waBtn","waBtn2","waFab"].forEach(id => { const el = document.getElementById(id); if (el) el.href = WA_LINK; });
+    ["frBtn","frBtn2","frFab"].forEach(id => { const el = document.getElementById(id); if (el) el.href = FRESHA_URL; });
 
-    document.querySelector('.edge-left').addEventListener('mouseenter', prev);
-    document.querySelector('.edge-right').addEventListener('mouseenter', next);
-    document.querySelector('.edge-left').addEventListener('click', prev);
-    document.querySelector('.edge-right').addEventListener('click', next);
-    document.querySelector('.arrow.left').addEventListener('click', prev);
-    document.querySelector('.arrow.right').addEventListener('click', next);
+    // Slider genérico (trabajos + reseñas)
+    document.querySelectorAll('.slider').forEach(slider => {
+      const track = slider.querySelector('.slides');
+      const prev = slider.querySelector('.arrow.left');
+      const next = slider.querySelector('.arrow.right');
+      let i = 0;
+      const total = track.children.length;
+
+      function show(n){
+        i = (n + total) % total;
+        track.style.setProperty('--i', i);
+      }
+      prev.addEventListener('click', () => show(i-1));
+      next.addEventListener('click', () => show(i+1));
+
+      // Swipe en móviles
+      let x0=null;
+      track.addEventListener('touchstart', e=>x0=e.touches[0].clientX);
+      track.addEventListener('touchend', e=>{
+        if(x0===null) return;
+        const dx = e.changedTouches[0].clientX - x0;
+        if(Math.abs(dx)>40) show(i + (dx<0?1:-1));
+        x0=null;
+      });
+    });
   </script>
 </body>
 </html>
