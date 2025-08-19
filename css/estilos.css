@@ -2,20 +2,25 @@
 :root{
   --bg:#faf8f5; --body-color:#333; --accent:#b88a44; --brand-wa:#25D366;
   --card:#fff; --shadow:0 6px 22px rgba(0,0,0,.10); --radius:14px;
-  --font-title:'Great Vibes',cursive; --font-body:'Poppins',sans-serif;
 
-  /* Paleta oro + borde negro */
+  --font-title:'Great Vibes',cursive;
+  --font-body:'Poppins',sans-serif;
+
+  /* Oro + borde negro sutil (sin sombras duras) */
   --gold-a:#f6e08a; --gold-b:#e7c45a; --gold-c:#d1a53a; --gold-d:#c18f2f; --gold-e:#f0c675;
-  --title-stroke-width:1.8px; --title-stroke-color:#000;
-  --title-shadow-top:0 -1px 0 rgba(255,255,255,.55);
-  --title-shadow-deep:0 2px 0 rgba(0,0,0,.35), 0 3px 3px rgba(0,0,0,.35);
+  --title-stroke-width:1px;           /* MUY sutil */
+  --title-stroke-color:#000;
+
+  /* Tamaños y espaciamiento de títulos */
+  --title-letterspace: 1px;           /* Más aire entre letras */
+  --subtitle-letterspace: .6px;
 
   --woman-w:300px; --logo-w:620px; --hero-pad:8.2rem;
-  --title-size:54px; --sub-size:18px;
+  --title-size:56px; --sub-size:22px;
 
   --container-w:1100px; --block-pad:4rem;
 
-  --gal-h:420px;              /* altura slider trabajos */
+  --gal-h:420px;
   --map-h:340px; --map-h-sm:260px;
 }
 
@@ -58,8 +63,43 @@ a:focus-visible,button:focus-visible{outline:2px solid #6c63ff; outline-offset:3
 .woman{ width: var(--woman-w); height:auto; }
 .woman-left{ transform: scaleX(-1); }
 .logo-title{ width: var(--logo-w); height:auto; display:block; }
-.hero-headline{ font-family:var(--font-title); font-size: var(--title-size); margin: 1.2rem auto .5rem; max-width: 980px; }
-.hero-sub{ font-size: var(--sub-size); opacity:.92; }
+
+/* Título y subtítulo dorados (Great Vibes) */
+.hero-headline{
+  font-family:var(--font-title);
+  font-size: var(--title-size);
+  margin: 1.1rem auto .5rem; max-width: 980px;
+  letter-spacing: var(--title-letterspace);
+}
+.hero-sub{
+  font-size: var(--sub-size);
+  opacity:.92;
+  letter-spacing: var(--subtitle-letterspace);
+}
+
+/* DORADO (sin sombras duras) */
+.gold-title,
+.gold-title-sm,
+.hero-headline,
+#servicios h2,
+#resenas h2,
+#trabajos h2,
+#ubicacion h2,
+#sobre h2,
+.cards h3,
+.xp{
+  color: transparent !important;
+  background: linear-gradient(180deg,
+    var(--gold-a) 0%,
+    var(--gold-b) 22%,
+    var(--gold-c) 46%,
+    var(--gold-d) 70%,
+    var(--gold-e) 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent !important;
+  -webkit-text-stroke: var(--title-stroke-width) var(--title-stroke-color);
+  text-shadow: none; /* sin sombras para no “ensuciar” el dorado */
+}
 
 /* BOTONES HERO */
 .hero-actions{ margin: 1.1rem 0 0; display:flex; gap:.8rem; flex-wrap:wrap; justify-content:center; }
@@ -83,73 +123,63 @@ a:focus-visible,button:focus-visible{outline:2px solid #6c63ff; outline-offset:3
 
 /* BLOQUES */
 .bloque{ padding: var(--block-pad) 1rem; text-align:center; }
-.bloque h2{ font-family: var(--font-title); font-size: clamp(28px, 3.2vw, 40px); margin-bottom: 1.4rem; }
+.bloque h2{
+  font-family: var(--font-title);
+  font-size: clamp(28px, 3.2vw, 42px);
+  margin-bottom: 1.2rem;
+  letter-spacing: var(--title-letterspace);
+}
 .box{
   max-width: var(--container-w); margin:0 auto; background: rgba(255,255,255,.82);
   border-radius: 18px; padding: 1.4rem 1.2rem; box-shadow: var(--shadow);
 }
-.xp{ margin-top:.6rem; }
+.xp{ margin-top:.6rem; letter-spacing: .8px; }
 
 /* CARDS */
 .cards{ display:flex; flex-wrap:wrap; justify-content:center; gap:1.2rem; max-width: var(--container-w); margin:0 auto; }
-.card{ background: rgba(255,255,255,.88); border-radius: var(--radius); padding: 1.4rem; width: 290px; box-shadow: var(--shadow); text-align:left; }
-.card h3{ font-family: var(--font-title); margin-bottom:.3rem; }
-
-/* ===== TÍTULOS DORADOS ===== */
-.gold-title,.gold-title-sm{
-  color: transparent !important;
-  background: linear-gradient(180deg,
-    var(--gold-a) 0%, var(--gold-b) 22%, var(--gold-c) 46%, var(--gold-d) 70%, var(--gold-e) 100%);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent !important;
-  -webkit-text-stroke: var(--title-stroke-width) var(--title-stroke-color);
-  text-shadow: var(--title-shadow-top), var(--title-shadow-deep);
-}
-.gold-title-sm{
-  -webkit-text-stroke: 1.2px var(--title-stroke-color);
-  text-shadow: 0 -1px 0 rgba(255,255,255,.5), 0 2px 2px rgba(0,0,0,.30);
+.card{ background: rgba(255,255,255,.88); border-radius: var(--radius); padding: 1.4rem; width: 300px; box-shadow: var(--shadow); text-align:left; }
+.card h3{
+  font-family: var(--font-title);
+  margin-bottom:.35rem;
+  font-size: 30px;
+  letter-spacing: .8px;
 }
 
 /* ===== SLIDER (trabajos + reseñas) ===== */
-.slider{ position: relative; max-width: var(--container-w); margin:0 auto; padding: 8px; }
+.slider{ position: relative; max-width: var(--container-w); margin:0 auto; padding: 8px; overflow:hidden; border-radius:18px; }
 .slider .slides{
-  --i: 0;
   display:grid; grid-auto-flow:column; grid-auto-columns:100%;
-  transition: transform .6s ease; transform: translateX(calc(var(--i) * -100%));
-  border-radius: 18px; overflow:hidden; background: transparent;
+  transition: transform .6s ease;
 }
-
-/* TRABAJOS: cuadrado, sin marcos, sin recorte */
-.img-slide{
-  aspect-ratio: 1 / 1;           /* cuadrado */
-  width: 100%;
-  max-height: var(--gal-h);
-  object-fit: contain;           /* no recorta la imagen */
-  background:#fff;               /* fondo blanco detrás si sobran bandas */
-  border:none; box-shadow:none; border-radius: 18px;
+.slider .arrow{
+  position:absolute; top:50%; transform:translateY(-50%);
+  background: rgba(0,0,0,.28); color:#fff; border:none;
+  width:34px; height:34px; border-radius:50%;
+  font-size:18px; line-height:34px; text-align:center; cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,.22);
 }
+.slider .arrow.left{ left:8px; } .slider .arrow.right{ right:8px; }
 
 /* RESEÑAS */
 .review-slide{
   display:flex; flex-direction:column; justify-content:center; align-items:center;
   min-height: 230px; padding: 1.4rem;
-  background: rgba(255,255,255,.88);
+  background: rgba(255,255,255,.90);
   border-radius: 18px; box-shadow: var(--shadow);
 }
 .review-slide p{ max-width: 760px; }
 .stars{ letter-spacing:.2rem; font-size: 22px; margin-bottom:.4rem; color:#e3b341; }
 .review-slide .who{ opacity:.75; margin-top:.4rem; }
 
-/* Flechas */
-.slider .arrow{
-  position:absolute; top:50%; transform:translateY(-50%);
-  background: rgba(0,0,0,.35); color:#fff; border:none;
-  width:38px; height:38px; border-radius:50%;
-  font-size:20px; line-height:38px; text-align:center; cursor:pointer;
-  box-shadow:0 4px 10px rgba(0,0,0,.25);
+/* TRABAJOS: cuadrado, sin marcos, sin recorte */
+.img-slide{
+  width: 100%;
+  max-height: var(--gal-h);
+  aspect-ratio: 1 / 1;         /* cuadradas */
+  object-fit: contain;          /* no recorta */
+  background: transparent;      /* sin bandas negras */
+  border:none; box-shadow:none; border-radius: 18px;
 }
-.slider .arrow.left{ left:8px; } .slider .arrow.right{ right:8px; }
-.slider .arrow:active{ transform: translateY(-50%) scale(.96); }
 
 /* MAPA */
 .map{ margin: 2rem auto; max-width: var(--container-w); }
@@ -176,22 +206,265 @@ a:focus-visible,button:focus-visible{outline:2px solid #6c63ff; outline-offset:3
 .fab-fresha{   bottom:170px; background-image:url("../img/boton-agenda.svg"); }
 
 /* RESPONSIVE */
-@media (max-width: 992px){ .img-slide{ max-height: 340px; } }
+@media (max-width: 992px){
+  :root{ --title-size:52px; --sub-size:20px; }
+  .img-slide{ max-height: 360px; }
+}
 @media (max-width: 768px){
-  :root{ --woman-w:200px; --logo-w:420px; --title-size:42px; }
+  :root{ --woman-w:200px; --logo-w:420px; --title-size:46px; --sub-size:18px; }
+  .hero{ padding: 6.2rem 1rem 2rem; }
   .hero-redes img{ width:36px; height:36px; }
   .map iframe{ height: var(--map-h-sm); }
   .fab{ width:50px; height:50px; right:15px; background-size:86%; }
   .fab-whatsapp{ bottom:15px; } .fab-call{ bottom:75px; } .fab-fresha{ bottom:135px; }
-  .review-slide{ min-height: 240px; }
 }
 @media (max-width: 600px){
-  :root{ --woman-w:150px; --logo-w:320px; --title-size:36px; }
-  .hero{ padding: 6.2rem 1rem 2rem; }
-  .img-slide{ max-height: 280px; }
+  :root{ --woman-w:150px; --logo-w:320px; --title-size:40px; --sub-size:17px; }
+  .img-slide{ max-height: 300px; }
 }
 
 /* Reduce animaciones */
 @media (prefers-reduced-motion: reduce){
   *{ transition:none !important; scroll-behavior:auto; }
 }
+/* === TÍTULOS DORADOS “MÁS RELLENOS” (override final) === */
+
+/* Ajustes globales de tamaño/espaciado (puedes subir/bajar si quieres) */
+:root{
+  --title-size: 66px;    /* H1 (portada) */
+  --h2-size: clamp(36px, 3.6vw, 46px);
+  --h3-size: 32px;       /* tarjetas/servicios */
+  --title-stroke-width: 0.7px;  /* borde negro sutil */
+}
+
+/* Paleta oro (usa las que ya tenías si existen) */
+:root{
+  --gold-a: #f6e08a;
+  --gold-b: #e7c45a;
+  --gold-c: #d1a53a;
+  --gold-d: #c18f2f;
+}
+
+/* Mixin de estilo dorado “relleno” */
+.gold-title,
+.gold-title-sm,
+.hero-headline,
+.bloque h2,
+.card h3 {
+  /* fuente y tamaños */
+  font-family: 'Great Vibes', cursive !important;
+  line-height: 1.06;               /* más compacto pero legible */
+  letter-spacing: 0.6px;           /* más espacio entre letras */
+
+  /* tamaños por nivel */
+}
+.hero-headline { font-size: var(--title-size) !important; }
+.bloque h2,
+.gold-title    { font-size: var(--h2-size) !important; }
+.card h3,
+.gold-title-sm { font-size: var(--h3-size) !important; }
+
+/* Relleno dorado con borde negro fino */
+.gold-title,
+.gold-title-sm,
+.hero-headline,
+.bloque h2,
+.card h3 {
+  /* relleno dorado */
+  background: linear-gradient(180deg, var(--gold-a) 0%, var(--gold-b) 25%, var(--gold-c) 60%, var(--gold-d) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* borde negro sutil */
+  -webkit-text-stroke: var(--title-stroke-width) #000;
+
+  /* “engorde” del relleno (sin sombra negra): capas doradas muy suaves */
+  text-shadow:
+    0 0 0.6px var(--gold-b),
+    0 0 1.2px var(--gold-b),
+    0 0 1.8px var(--gold-b),
+    0 -1px 0 rgba(255,255,255,.35); /* pequeño brillo superior */
+}
+
+/* Subtítulos (h3) con un poco más de tracking para legibilidad */
+.card h3,
+.gold-title-sm { letter-spacing: 0.7px; line-height: 1.08; }
+
+/* Si algún título heredó otra fuente por CSS inline, fuerza prioridad */
+.gold-title,
+.gold-title-sm,
+.hero-headline,
+.bloque h2,
+.card h3 {
+  font-weight: 700 !important; /* Great Vibes no tiene pesos, pero ayuda a rematar */
+}
+/* === TÍTULOS DORADOS “CON MÁS PESO VISUAL” === */
+
+:root{
+  --title-size: 70px;       /* H1 portada más grande */
+  --h2-size: clamp(40px, 3.8vw, 50px);
+  --h3-size: 34px;          /* subtítulos */
+  --title-stroke-width: 0.6px; /* borde negro sutil */
+}
+
+/* Aplica a títulos principales y subtítulos */
+.hero-headline,
+.bloque h2,
+.card h3,
+.gold-title,
+.gold-title-sm {
+  font-family: 'Great Vibes', cursive !important;
+  font-weight: 700 !important; 
+  line-height: 1.05;
+  letter-spacing: 0.8px;       /* un poco más de aire entre letras */
+
+  /* Relleno dorado intenso */
+  background: linear-gradient(180deg,
+    #f9e37a 0%,
+    #eac859 30%,
+    #d5a93b 65%,
+    #c28f2f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Borde negro delgadito */
+  -webkit-text-stroke: var(--title-stroke-width) #000;
+
+  /* Capas doradas para dar “cuerpo” al relleno */
+  text-shadow:
+    0 0 1px #eac859,
+    0 0 2px #eac859,
+    0 0 3px #d5a93b,
+    0 0 4px rgba(0,0,0,.15); /* leve profundidad */
+}
+
+/* Tamaños específicos */
+.hero-headline { font-size: var(--title-size) !important; }
+.bloque h2,
+.gold-title { font-size: var(--h2-size) !important; }
+.card h3,
+.gold-title-sm { font-size: var(--h3-size) !important; }
+/* === TÍTULOS DORADOS CON SOMBRA DIFUMINADA === */
+
+:root{
+  --title-size: 70px;       /* H1 portada grande */
+  --h2-size: clamp(40px, 3.8vw, 50px);
+  --h3-size: 34px;          /* subtítulos */
+}
+
+/* Aplica a títulos principales y subtítulos */
+.hero-headline,
+.bloque h2,
+.card h3,
+.gold-title,
+.gold-title-sm {
+  font-family: 'Great Vibes', cursive !important;
+  font-weight: 700 !important; 
+  line-height: 1.08;
+  letter-spacing: 0.8px;
+
+  /* Relleno dorado */
+  background: linear-gradient(180deg,
+    #f9e37a 0%,
+    #eac859 30%,
+    #d5a93b 65%,
+    #c28f2f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* SOMBRA DIFUMINADA (sin borde) */
+  text-shadow:
+    0 2px 6px rgba(0,0,0,.35),  /* profundidad general */
+    0 0 6px #eac859,            /* halo dorado */
+    0 0 12px #d5a93b;           /* brillo más suave */
+}
+
+/* Tamaños específicos */
+.hero-headline { font-size: var(--title-size) !important; }
+.bloque h2,
+.gold-title { font-size: var(--h2-size) !important; }
+.card h3,
+.gold-title-sm { font-size: var(--h3-size) !important; }
+/* === TÍTULOS DORADOS CON SOMBRA HACIA ABAJO === */
+
+:root{
+  --title-size: 70px;       /* Título grande portada */
+  --h2-size: clamp(40px, 3.8vw, 50px);
+  --h3-size: 34px;          /* subtítulos */
+}
+
+/* Aplica a títulos principales y subtítulos */
+.hero-headline,
+.bloque h2,
+.card h3,
+.gold-title,
+.gold-title-sm {
+  font-family: 'Great Vibes', cursive !important;
+  font-weight: 700 !important;
+  line-height: 1.1;
+  letter-spacing: 0.8px;
+
+  /* Relleno dorado limpio */
+  background: linear-gradient(180deg,
+    #f9e37a 0%,
+    #eac859 30%,
+    #d5a93b 65%,
+    #c28f2f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* SOMBRA DIFUMINADA SOLO HACIA ABAJO */
+  text-shadow:
+    0 4px 8px rgba(0,0,0,.35); /* sombra suave proyectada hacia abajo */
+}
+
+/* Tamaños específicos */
+.hero-headline { font-size: var(--title-size) !important; }
+.bloque h2,
+.gold-title { font-size: var(--h2-size) !important; }
+.card h3,
+.gold-title-sm { font-size: var(--h3-size) !important; }
+/* === TÍTULOS DORADOS CON BORDE FINO === */
+
+:root{
+  --title-size: 70px;       /* Título grande portada */
+  --h2-size: clamp(40px, 3.8vw, 50px);
+  --h3-size: 34px;          /* subtítulos */
+}
+
+/* Aplica a títulos principales y subtítulos */
+.hero-headline,
+.bloque h2,
+.card h3,
+.gold-title,
+.gold-title-sm {
+  font-family: 'Great Vibes', cursive !important;
+  font-weight: 700 !important;
+  line-height: 1.1;
+  letter-spacing: 0.6px;
+
+  /* Relleno dorado */
+  background: linear-gradient(180deg,
+    #f9e37a 0%,
+    #eac859 30%,
+    #d5a93b 65%,
+    #c28f2f 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* Borde negro MUY delgado */
+  -webkit-text-stroke: 0.6px #000;
+}
+
+/* Tamaños específicos */
+.hero-headline { font-size: var(--title-size) !important; }
+.bloque h2,
+.gold-title { font-size: var(--h2-size) !important; }
+.card h3,
+.gold-title-sm { font-size: var(--h3-size) !important; }
+
